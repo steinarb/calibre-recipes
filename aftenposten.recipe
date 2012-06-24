@@ -9,10 +9,14 @@ class AftenpostenSb(BasicNewsRecipe):
      max_articles_per_feed = 100
      no_stylesheets = True
      keep_only_tags = [ dict(name='h1', attrs={'class':'articleTitle '}),
+                        dict(name='div', attrs={'id':'articleTop'}),
+                        dict(name='div', attrs={'id':'articleBody'}),
                         dict(name='p', attrs={'class':'leadText '}),
                         dict(name='div', attrs={'class':'group publishInfo'}),
                         dict(name='div', attrs={'class':'slideShowItemContainer'}),
                         dict(name='div', attrs={'class':'bodyText widget storyContent bodyText'}) ]
+
+     remove_tags    = [dict(name='div', attrs={'class':'services'})]
 
      feeds          = [(u'Innenriks', u'http://www.aftenposten.no/rss/?kat=nyheter_iriks&img=w780c169'),
                        (u'Verden', u'http://www.aftenposten.no/rss/?kat=nyheter_uriks&img=w780c169'),
