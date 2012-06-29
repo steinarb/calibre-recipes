@@ -1,0 +1,13 @@
+#!/bin/sh
+#
+# Run from crontab to fetch new editions of online newspapers
+# 
+
+RECIPEDIR=$HOME/git/calibre-recipes
+
+cd $RECIPEDIR
+ebook-convert vg.recipe output.epub >/dev/null
+calibredb add --with-library $HOME/aviser output.epub >/dev/null
+ebook-convert aftenposten.recipe output.epub >/dev/null
+calibredb add --with-library $HOME/aviser output.epub >/dev/null
+rm output.epub
