@@ -3,7 +3,8 @@
 # Run from crontab to fetch new editions of online newspapers
 # 
 
-RECIPEDIR=$HOME/git/calibre-recipes
+# Recipe dir is the dir this script resides in.
+RECIPEDIR=`(cd $(dirname $0); pwd)`
 EPUBFILE=/tmp/avis.epub
 
 cd $RECIPEDIR
