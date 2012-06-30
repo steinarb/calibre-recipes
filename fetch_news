@@ -4,10 +4,11 @@
 # 
 
 RECIPEDIR=$HOME/git/calibre-recipes
+EPUBFILE=/tmp/avis.epub
 
 cd $RECIPEDIR
-ebook-convert vg.recipe output.epub >/dev/null
-calibredb add --with-library $HOME/aviser output.epub >/dev/null
-ebook-convert aftenposten.recipe output.epub >/dev/null
-calibredb add --with-library $HOME/aviser output.epub >/dev/null
-rm output.epub
+ebook-convert vg.recipe $EPUBFILE >/dev/null
+calibredb add --with-library $HOME/aviser $EPUBFILE >/dev/null
+ebook-convert aftenposten.recipe $EPUBFILE >/dev/null
+calibredb add --with-library $HOME/aviser $EPUBFILE >/dev/null
+rm $EPUBFILE
