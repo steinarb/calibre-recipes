@@ -7,10 +7,11 @@
 RECIPEDIR=`(cd $(dirname $0); pwd)`
 EPUBFILE=/tmp/avis.epub
 LIBRARY_LOCATION=$HOME/aviser
+RECIPE_LIST="vg.recipe aftenposten.recipe"
 
 cd $RECIPEDIR
-ebook-convert vg.recipe $EPUBFILE >/dev/null
-calibredb add --with-library $LIBRARY_LOCATION $EPUBFILE >/dev/null
-ebook-convert aftenposten.recipe $EPUBFILE >/dev/null
-calibredb add --with-library $LIBRARY_LOCATION $EPUBFILE >/dev/null
-rm $EPUBFILE
+for recipe in $RECIPE_LIST;do
+    ebook-convert $recipe $EPUBFILE >/dev/null
+    calibredb add --with-library $LIBRARY_LOCATION $EPUBFILE >/dev/null
+    rm $EPUBFILE
+done
