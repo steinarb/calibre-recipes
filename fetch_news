@@ -6,10 +6,11 @@
 # Recipe dir is the dir this script resides in.
 RECIPEDIR=`(cd $(dirname $0); pwd)`
 EPUBFILE=/tmp/avis.epub
+LIBRARY_LOCATION=$HOME/aviser
 
 cd $RECIPEDIR
 ebook-convert vg.recipe $EPUBFILE >/dev/null
-calibredb add --with-library $HOME/aviser $EPUBFILE >/dev/null
+calibredb add --with-library $LIBRARY_LOCATION $EPUBFILE >/dev/null
 ebook-convert aftenposten.recipe $EPUBFILE >/dev/null
-calibredb add --with-library $HOME/aviser $EPUBFILE >/dev/null
+calibredb add --with-library $LIBRARY_LOCATION $EPUBFILE >/dev/null
 rm $EPUBFILE
