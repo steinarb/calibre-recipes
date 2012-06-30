@@ -1,0 +1,33 @@
+from calibre.web.feeds.news import BasicNewsRecipe
+
+class Nrk(BasicNewsRecipe):
+     title          = u'nrk.no'
+     __author__     = 'sb'
+     description    = 'Norske nyheter'
+     language = 'no'
+     oldest_article = 1
+     max_articles_per_feed = 100
+     no_stylesheets = True
+     keep_only_tags = [ dict(name='div', attrs={'class':'intro-element-article'}),
+                        dict(name='div', attrs={'class':'article-info'}),
+                        dict(name='div', attrs={'class':'article'}) ]
+
+     remove_tags    = [ dict(name='ul', attrs={'class':'article-tools'}),
+                        dict(name='div', attrs={'id':'share-article'}),
+                        dict(name='div', attrs={'class':'thumbnails'}),
+                        dict(name='span', attrs={'class':'nextgroup'}) ]
+
+     feeds          = [(u'NRK Nyheter', u'http://www.nrk.no/nyheiter/siste.rss'),
+                       (u'Norge', u'http://www.nrk.no/norge/siste.rss'),
+                       (u'NRK Østlandssendingen', u'http://www.nrk.no/ostlandssendingen/siste.rss'),
+                       (u'Verden', u'http://www.nrk.no/verden/siste.rss'),
+                       (u'Økonomi', u'http://www.nrk.no/nyheiter/okonomi/siste.rss '),
+                       (u'Sport', u'http://www.nrksport.no/siste.rss '),
+                       (u'Kultur og underholdning', u'http://www.nrk.no/kultur-og-underholdning/siste.rss '),
+                       (u'Helse, forbruk og livsstil', u'http://www.nrk.no/helse-forbruk-og-livsstil/siste.rss'),
+                       (u'Vitenskap og teknologi', u'http://www.nrk.no/vitenskap-og-teknologi/siste.rss'),
+                       (u'Musikk', u'http://www.nrk.no/liste.rss?contentId=1.814122')]
+
+     def get_cover_url(self):
+         url = 'http://gfx.nrk.no/kwRFQzytbj41ABtNxBbouwsNGwu8_qTcArguvELMHzcg.jpg'
+         return url
