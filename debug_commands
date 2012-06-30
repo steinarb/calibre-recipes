@@ -1,2 +1,3 @@
 ebook-convert aftenposten.recipe .epub --test -vv --debug-pipeline debug
 ebook-convert vg.recipe .epub --test -vv --debug-pipeline debug
+ebook-convert nrk.recipe .epub --test -vv --debug-pipeline debug
