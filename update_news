@@ -43,7 +43,7 @@ for line in `calibredb list --with-library $LIBRARY_LOCATION -f pubdate`;do
       pubdateAsSeconds=`date --date $pubdate "+%s"`
       if [ "$pubdateAsSeconds" -lt "$expirationDate" ]; then
           # Expiring article older than the expirationDate
-          calibredb remove $id --with-library $LIBRARY_LOCATION
+          calibredb remove $id --with-library $LIBRARY_LOCATION >/dev/null
       fi
   fi
 done
