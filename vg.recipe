@@ -1,3 +1,4 @@
+# -*- python -*-
 import re
 
 class VgNo(BasicNewsRecipe):
@@ -25,4 +26,3 @@ class VgNo(BasicNewsRecipe):
     def get_cover_url(self):
        url = 'http://static.buyandread.com/thumbnail/verdensgang/verdensgang-large.jpg'
        return url
-
