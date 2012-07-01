@@ -2,7 +2,7 @@ import re
 
 class AdvancedUserRecipe1297024851(BasicNewsRecipe):
     title          = u'VG.no'
-    oldest_article = 7
+    oldest_article = 1
     max_articles_per_feed = 100
 
     feeds          = [(u'Forsiden', u'http://www.vg.no/rss/nyfront.php?frontId=1'),
