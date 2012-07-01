@@ -4,14 +4,6 @@ class AdvancedUserRecipe1297024851(BasicNewsRecipe):
     title          = u'VG.no'
     oldest_article = 1
     max_articles_per_feed = 100
-    keep_only_tags = [ dict(name='div', attrs={'id':'stortArtikkelBilde'}),
-                       dict(name='div', attrs={'id':'artikkelspalte'}) ]
-
-    remove_tags_after = [ dict(name='div', attrs={'id':'artikkel_felt'}) ]
-
-    remove_tags    = [ dict(name='ul', attrs={'id':'breadcrumbs'}),
-                       dict(name='div', attrs={'id':'map'}),
-                       dict(name='div', attrs={'class':'shareBox'}) ]
 
     feeds          = [(u'Forsiden', u'http://www.vg.no/rss/nyfront.php?frontId=1'),
                       (u'Nyheter innenriks', u'http://www.vg.no/rss/create.php?categories=10'),
@@ -24,6 +16,11 @@ class AdvancedUserRecipe1297024851(BasicNewsRecipe):
                       (u'Rampelys bøke', u'http://www.vg.no/rss/create.php?categories=28'),
                       (u'Dine Penger', u'http://www.vg.no/rss/create.php?categories=90'),
                       (u'Interaktiv spill', u'http://www.vg.no/rss/create.php?categories=41')]
+
+    def print_version(self, url):
+        spliturl = re.split('artid=',url)
+        spliturl[0] = 'http://www.vg.no/nyheter/utskriftsvennlig/?artId='
+        return ''.join(spliturl)
 
     def get_cover_url(self):
        url = 'http://static.buyandread.com/thumbnail/verdensgang/verdensgang-large.jpg'
