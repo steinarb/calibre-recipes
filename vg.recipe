@@ -4,7 +4,7 @@ import re
 class VgNo(BasicNewsRecipe):
     title          = u'VG.no'
     oldest_article = 1
-    max_articles_per_feed = 5
+    max_articles_per_feed = 100
 
     feeds          = [(u'Forsiden', u'http://www.vg.no/rss/nyfront.php?frontId=1'),
                       (u'Nyheter innenriks', u'http://www.vg.no/rss/create.php?categories=10'),
