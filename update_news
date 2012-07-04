@@ -13,7 +13,8 @@ expirationDate=`date --date "2 days ago" "+%s"`
 RECIPEDIR=`(cd $(dirname $0); pwd)`
 EPUBFILE=/tmp/avis.epub
 LIBRARY_LOCATION=$HOME/aviser
-LOG_FILE=/tmp/update_news.log
+LOG_FILE=/dev/null
+#LOG_FILE=/tmp/update_news.log
 
 #
 # First fetch the current editions of the online newspapers.
