@@ -11,7 +11,9 @@ expirationDate=`date --date "2 days ago" "+%s"`
 # Locations recipes, epub files and the calibre database
 # Note: RECIPEDIR is the same directory this script resides in
 RECIPEDIR=`(cd $(dirname $0); pwd)`
-EPUBFILE=/tmp/avis.epub
+IMPORTDIR=/tmp/avis
+EPUBFILE=$IMPORTDIR/avis.epub
+MOBIFILE=`echo $EPUBFILE | sed 's/\.epub$/.mobi/g'`
 LIBRARY_LOCATION=$HOME/aviser
 LOG_FILE=/dev/null
 #LOG_FILE=/tmp/update_news.log
@@ -23,9 +25,11 @@ echo "Log file for calibre newspaper update script" >$LOG_FILE
 cd $RECIPEDIR
 for recipe in $RECIPE_LIST;do
     publicationName=`echo $recipe | sed 's/\.recipe$//g'`
+    mkdir -p $IMPORTDIR
     ebook-convert $recipe $EPUBFILE --tags News,$publicationName --preserve-cover-aspect-ratio >>$LOG_FILE
-    calibredb add -d --with-library $LIBRARY_LOCATION $EPUBFILE >>$LOG_FILE
-    rm $EPUBFILE
+    ebook-convert $EPUBFILE $MOBIFILE >>$LOG_FILE
+    calibredb add -d --with-library $LIBRARY_LOCATION --one-book-per-directory $IMPORTDIR >>$LOG_FILE
+    rm -rf $IMPORTDIR
 done
 
 
