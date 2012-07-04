@@ -19,8 +19,9 @@ LIBRARY_LOCATION=$HOME/aviser
 #
 cd $RECIPEDIR
 for recipe in $RECIPE_LIST;do
-    ebook-convert $recipe $EPUBFILE >/dev/null
-    calibredb add --with-library $LIBRARY_LOCATION $EPUBFILE >/dev/null
+    publicationName=`echo $recipe | sed 's/\.recipe$//g'`
+    ebook-convert $recipe $EPUBFILE --tags News,$publicationName >/dev/null
+    calibredb add -d --with-library $LIBRARY_LOCATION $EPUBFILE >/dev/null
     rm $EPUBFILE
 done
 
