@@ -13,15 +13,17 @@ expirationDate=`date --date "2 days ago" "+%s"`
 RECIPEDIR=`(cd $(dirname $0); pwd)`
 EPUBFILE=/tmp/avis.epub
 LIBRARY_LOCATION=$HOME/aviser
+LOG_FILE=/tmp/update_news.log
 
 #
 # First fetch the current editions of the online newspapers.
 #
+echo "Log file for calibre newspaper update script" >$LOG_FILE
 cd $RECIPEDIR
 for recipe in $RECIPE_LIST;do
     publicationName=`echo $recipe | sed 's/\.recipe$//g'`
-    ebook-convert $recipe $EPUBFILE --tags News,$publicationName --preserve-cover-aspect-ratio >/dev/null
-    calibredb add -d --with-library $LIBRARY_LOCATION $EPUBFILE >/dev/null
+    ebook-convert $recipe $EPUBFILE --tags News,$publicationName --preserve-cover-aspect-ratio >>$LOG_FILE
+    calibredb add -d --with-library $LIBRARY_LOCATION $EPUBFILE >>$LOG_FILE
     rm $EPUBFILE
 done
 
@@ -44,7 +46,7 @@ for line in `calibredb list --with-library $LIBRARY_LOCATION -f pubdate`;do
       pubdateAsSeconds=`date --date $pubdate "+%s"`
       if [ "$pubdateAsSeconds" -lt "$expirationDate" ]; then
           # Expiring article older than the expirationDate
-          calibredb remove $id --with-library $LIBRARY_LOCATION >/dev/null
+          calibredb remove $id --with-library $LIBRARY_LOCATION >>$LOG_FILE
       fi
   fi
 done
