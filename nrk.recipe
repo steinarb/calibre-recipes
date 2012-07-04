@@ -5,6 +5,7 @@ class Nrk(BasicNewsRecipe):
      title          = u'nrk.no'
      __author__     = 'sb'
      description    = 'Norske nyheter'
+     publication_type = 'newspaper'
      language = 'no'
      oldest_article = 1
      max_articles_per_feed = 100

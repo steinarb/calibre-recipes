@@ -6,6 +6,7 @@ class AftenpostenSb(BasicNewsRecipe):
      __author__     = 'sb'
      description    = 'Norske nyheter'
      language = 'no'
+     publication_type = 'newspaper'
      oldest_article = 1
      max_articles_per_feed = 100
      no_stylesheets = True

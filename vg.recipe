@@ -3,8 +3,9 @@ import re
 
 class VgNo(BasicNewsRecipe):
     title          = u'VG.no'
-    language = 'no'
     description    = 'Norske nyheter'
+    language = 'no'
+    publication_type = 'newspaper'
     oldest_article = 1
     max_articles_per_feed = 100
 
