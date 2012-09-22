@@ -16,6 +16,7 @@ class AftenpostenSb(BasicNewsRecipe):
                         dict(name='p', attrs={'class':'leadText '}),
                         dict(name='div', attrs={'class':'group publishInfo'}),
                         dict(name='div', attrs={'class':'slideShowItemContainer'}),
+                        dict(name='div', attrs={'class':'bodyText widget storyContent'}),
                         dict(name='div', attrs={'class':'bodyText widget storyContent bodyText'}) ]
 
      remove_tags    = [ dict(name='div', attrs={'class':'services'}),
