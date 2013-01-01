@@ -32,6 +32,8 @@ class AftenpostenSb(BasicNewsRecipe):
                        (u'Sport', u'http://www.aftenposten.no/rss/?kat=nyheter_sport&img=w780c169'),
                        (u'Motorsport', u'http://www.aftenposten.no/rss/?kat=nyheter_sport_ol&img=w780c169') ]
 
+     extra_css = '.leadText { display: inline-block; font-size: 16px; font-weight: 700; line-height: 1.22; }'
+
      def get_cover_url(self):
          url = 'http://static.buyandread.com/thumbnail/aftenposten_morgen/aftenposten_morgen.jpg'
          return url
