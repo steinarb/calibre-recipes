@@ -23,6 +23,7 @@ class AftenpostenSb(BasicNewsRecipe):
      remove_tags    = [ dict(name='div', attrs={'class':'services'}),
                         dict(name='div', attrs={'class':'span4 pull1 left relationArticle'}),
                         dict(name='div', attrs={'class':'span4 pull1 left expandParent relationArticle noPrint animate'}),
+                        dict(name='div', attrs={'class':'playerWrapper'}),
                         dict(name='div', attrs={'class':'addthis_toolbox widget pageTools addThisPlain widget-editable viziwyg-section-622 inpage-widget-6906834 noPrint'}) ]
 
      feeds          = [(u'Innenriks', u'http://www.aftenposten.no/rss/?kat=nyheter_iriks&img=w780c169'),
