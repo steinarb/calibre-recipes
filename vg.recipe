@@ -21,6 +21,11 @@ class VgNo(BasicNewsRecipe):
                       (u'Dine Penger', u'http://www.vg.no/rss/create.php?categories=90'),
                       (u'Interaktiv spill', u'http://www.vg.no/rss/create.php?categories=41')]
 
+    preprocess_regexps = [
+        (re.compile(r'(<div id="articleBodytext">)'), lambda match: match.group() + r'<p>'), # Start articleBody with a paragraph start tag.
+        (re.compile(r'<br/><br/>'), lambda match:  r'</p><p>'), # Replace pairs of forced line breaks with article end followed by article start
+        ]
+
     def print_version(self, url):
         spliturl = re.split('artid=',url)
         spliturl[0] = 'http://www.vg.no/nyheter/utskriftsvennlig/?artId='
