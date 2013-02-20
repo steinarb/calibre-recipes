@@ -1,0 +1,16 @@
+#!/bin/sh
+#
+# First creates a PNG of the http://nrk.no page (around 15MB).
+# Then shrinks the page to a 200 pixel width and finally
+# crops the image to the same size as the aftenposten and
+# vg front pages.
+#
+# Requires the following debian packages:
+#  cutycapt (uses webkit to download a web page and render it as an image)
+#  xfvb (a fake X11 server that fills cutycapt's requirement for an X server)
+#  netpbm
+# 
+
+WORKDIR=/tmp
+xvfb-run --server-args="-screen 0, 200x286x24" cutycapt --url="http://nrk.no" --out=$WORKDIR/nrk_large.png
+pngtopnm $WORKDIR/nrk_large.png | pnmscale -width=200 | pnmcut 0 0 200 286 | pnmtopng >$WORKDIR/nrk.png
