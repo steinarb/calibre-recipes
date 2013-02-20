@@ -4,8 +4,14 @@
 # and expire old editions of online newspapers.
 # 
 
+# Find the directory this script resides in.
+SCRIPTDIR=`(cd $(dirname $0); pwd)`
+
+# Create an http://nrk.no cover image (takes approx 1 minute)
+$SCRIPTDIR/create_nrk_cover_image
+
 # Variables that may need adjustment
-RECIPE_LIST="vg.recipe aftenposten.recipe"
+RECIPE_LIST="vg.recipe aftenposten.recipe nrk.recipe"
 expirationDate=`date --date "2 days ago" "+%s"`
 
 # Locations recipes, epub files and the calibre database
