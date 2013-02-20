@@ -31,5 +31,5 @@ class Nrk(BasicNewsRecipe):
                        (u'Musikk', u'http://www.nrk.no/liste.rss?contentId=1.814122')]
 
      def get_cover_url(self):
-         url = 'file:///tmp/nrk.png'
+         url = 'file:///tmp/nrk.jpg'
          return url
