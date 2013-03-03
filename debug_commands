@@ -1,3 +1,5 @@
 ebook-convert aftenposten.recipe .epub --test -vv --debug-pipeline debug
 ebook-convert vg.recipe .epub --test -vv --debug-pipeline debug
 ebook-convert nrk.recipe .epub --test -vv --debug-pipeline debug
+
+ebook-convert vg.recipe avis.epub --output-profile=sony --tags News,vg --preserve-cover-aspect-ratio >/dev/null
