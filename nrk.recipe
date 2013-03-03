@@ -30,6 +30,13 @@ class Nrk(BasicNewsRecipe):
                        (u'Vitenskap og teknologi', u'http://www.nrk.no/vitenskap-og-teknologi/siste.rss'),
                        (u'Musikk', u'http://www.nrk.no/liste.rss?contentId=1.814122')]
 
+     extra_css = '\
+body.nas .intro-element-article p, body.nas .article p { line-height: 1.5; } \
+.img-center p, .img-left p, .img-right p, .img-center address, .img-left address, .img-right address, .article .img-center p, .article .img-left p, .article .img-right p, .article .img-center address, .article .img-left address, .article .img-right address, .video p { background-color: #E8E8E8; color: #000000; font-size: 10px; font-weight: 400; margin: 0px; padding: 4px; } \
+ul.byline li address span, ul.byline li address a { color: #777777; display: block; font-style: normal; font-weight: 700; line-height: 12px; text-transform: uppercase; } \
+* { background-color: transparent; color: inherit; font-family: "Verdana", "Arial", "Helvetica", sans-serif; margin: 0px; padding: 0px; text-align: left; } \
+'
+
      def get_cover_url(self):
          url = 'file:///tmp/nrk.jpg'
          return url
