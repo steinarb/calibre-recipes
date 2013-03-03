@@ -7,7 +7,7 @@
 #
 # Requires the following debian packages:
 #  cutycapt (uses webkit to download a web page and render it as an image)
-#  xfvb (a fake X11 server that fills cutycapt's requirement for an X server)
+#  xvfb (a fake X11 server that fills cutycapt's requirement for an X server)
 #  netpbm
 # 
 
