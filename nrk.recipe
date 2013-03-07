@@ -24,10 +24,10 @@ class Nrk(BasicNewsRecipe):
                        (u'NRK Østlandssendingen', u'http://www.nrk.no/ostlandssendingen/siste.rss'),
                        (u'NRK Nordland', u'http://www.nrk.no/nordland/siste.rss'),
                        (u'Verden', u'http://www.nrk.no/verden/siste.rss'),
-                       (u'Økonomi', u'http://www.nrk.no/nyheiter/okonomi/siste.rss '),
-                       (u'Sport', u'http://www.nrksport.no/siste.rss '),
+                       (u'Økonomi', u'http://www.nrk.no/nyheiter/okonomi/siste.rss'),
+                       (u'Sport', u'http://www.nrksport.no/siste.rss'),
                        (u'Yr.no: værnyheter', u'http://www.yr.no/toppsaker.rss'),
-                       (u'Kultur og underholdning', u'http://www.nrk.no/kultur-og-underholdning/siste.rss '),
+                       (u'Kultur og underholdning', u'http://www.nrk.no/kultur-og-underholdning/siste.rss'),
                        (u'Helse, forbruk og livsstil', u'http://www.nrk.no/helse-forbruk-og-livsstil/siste.rss'),
                        (u'Vitenskap og teknologi', u'http://www.nrk.no/vitenskap-og-teknologi/siste.rss'),
                        (u'Musikk', u'http://www.nrk.no/liste.rss?contentId=1.814122')]
