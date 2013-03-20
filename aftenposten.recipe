@@ -49,7 +49,7 @@ class AftenpostenSb(BasicNewsRecipe):
 '
 
      preprocess_regexps = [
-          (re.compile(r' '), lambda match: ' '),
+          (re.compile(ur'\u2006'), lambda match: ' '),
      ]
 
      def get_cover_url(self):
