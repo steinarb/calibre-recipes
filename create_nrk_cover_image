@@ -12,5 +12,5 @@
 # 
 
 WORKDIR=/tmp
-xvfb-run --server-args="-screen 0, 200x286x24" cutycapt --url="http://nrk.no" --out=$WORKDIR/nrk_large.png
+xvfb-run --server-args="-screen 0, 200x286x24" cutycapt --url="http://nrk.no" --out=$WORKDIR/nrk_large.png >/dev/null
 pngtopnm $WORKDIR/nrk_large.png | pnmscale -width=200 | pnmcut 0 0 200 286 | pnmtojpeg >$WORKDIR/nrk.jpg
