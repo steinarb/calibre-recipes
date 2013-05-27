@@ -19,6 +19,10 @@ class Nrk(BasicNewsRecipe):
      remove_tags    = [ dict(name='ul', attrs={'class':'article-tools'}),
                         dict(name='div', attrs={'id':'share-article'}),
                         dict(name='div', attrs={'class':'thumbnails'}),
+                        dict(name='div', attrs={'class':'g50 col fr s6 sl9 sl12 sl18 image-reference'}),
+                        dict(name='div', attrs={'class':'g50 col fl s6 sl9 sl12 sl18 quote-reference'}),
+                        dict(name='div', attrs={'class':'g50 col fr s6 sl9 sl12 sl18 quote-reference'}),
+                        dict(name='div', attrs={'class':'g33 col s6 sl9 sl12 sl18 stack fr cf'}),
                         dict(name='img', attrs={'class':'js-img'}),
                         dict(name='span', attrs={'class':'nextgroup'}) ]
 
