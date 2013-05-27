@@ -12,11 +12,14 @@ class Nrk(BasicNewsRecipe):
      no_stylesheets = True
      keep_only_tags = [ dict(name='div', attrs={'class':'intro-element-article'}),
                         dict(name='div', attrs={'class':'article-info'}),
-                        dict(name='div', attrs={'class':'article'}) ]
+                        dict(name='div', attrs={'class':'article'}),
+                        dict(name='article', attrs={'class':'article widget rich cf'}),
+                        dict(name='noscript') ]
 
      remove_tags    = [ dict(name='ul', attrs={'class':'article-tools'}),
                         dict(name='div', attrs={'id':'share-article'}),
                         dict(name='div', attrs={'class':'thumbnails'}),
+                        dict(name='img', attrs={'class':'js-img'}),
                         dict(name='span', attrs={'class':'nextgroup'}) ]
 
      feeds          = [(u'NRK Nyheter', u'http://www.nrk.no/nyheiter/siste.rss'),
@@ -36,6 +39,8 @@ class Nrk(BasicNewsRecipe):
 body.nas .intro-element-article p, body.nas .article p { line-height: 1.5; } \
 .img-center p, .img-left p, .img-right p, .img-center address, .img-left address, .img-right address, .article .img-center p, .article .img-left p, .article .img-right p, .article .img-center address, .article .img-left address, .article .img-right address, .video p { background-color: #E8E8E8; color: #000000; font-size: 10px; font-weight: 400; margin: 0px; padding: 4px; } \
 ul.byline li address span, ul.byline li address a { color: #777777; display: block; font-style: normal; font-weight: 700; line-height: 12px; text-transform: uppercase; } \
+.image figcaption { background-color: #E5E5E5; color: #333333; font-size: 0.8em; font-weight: 400; line-height: 1.4; padding: 0px 9px; } \
+.image figcaption p { font-family: "Helvetica Neue", "Arial", sans-serif; margin: 7px 0px; color: #333333; font-size: 0.8em; font-weight: 400; line-height: 1.4; } \
 * { background-color: transparent; font-family: "Verdana", "Arial", "Helvetica", sans-serif; margin: 0px; padding: 0px; text-align: left; } \
 '
 
