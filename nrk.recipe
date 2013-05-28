@@ -48,6 +48,9 @@ ul.byline li address span, ul.byline li address a { color: #777777; display: blo
 * { background-color: transparent; font-family: "Verdana", "Arial", "Helvetica", sans-serif; margin: 0px; padding: 0px; text-align: left; } \
 '
 
+     def image_url_processor(self, baseurl, url):
+          return url.replace('http://gfx.nrk.no//', 'http://gfx.nrk.no/')
+
      def get_cover_url(self):
          url = 'file:///tmp/nrk.jpg'
          return url
