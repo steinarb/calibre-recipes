@@ -61,3 +61,19 @@ for line in `calibredb list --with-library $LIBRARY_LOCATION -f pubdate`;do
       fi
   fi
 done
+
+# After expiry, empty the Gnome trashcan (where calibre drops the
+# expired newspapers)
+#
+# Use the trash-cli tools if available ("rm -rf" in the appropriate
+# directory would also do the trick, but the tools know where "the
+# appropriate directory" is).
+#
+TRASH_EMPTY=/usr/bin/trash-empty
+if [ -x "$TRASH_EMPTY" ]; then
+    echo "Disk usage before cleanup:" >>$LOG_FILE
+    df >>$LOG_FILE
+    $TRASH_EMPTY >>$LOG_FILE
+    echo "Disk usage after cleanup:" >>$LOG_FILE
+    df >>$LOG_FILE
+fi
