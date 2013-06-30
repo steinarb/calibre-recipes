@@ -28,6 +28,7 @@ class Nrk(BasicNewsRecipe):
                         dict(name='div', attrs={'class':'g33 col s6 sl9 sl12 sl18 stack fr cf'}),
                         dict(name='div', attrs={'class':'bulletin-sharing'}),
                         dict(name='img', attrs={'class':'js-img'}),
+                        dict(name='span', attrs={'class':'bulletin-pitch'}),
                         dict(name='span', attrs={'class':'nextgroup'}) ]
 
      feeds          = [(u'NRK Østlandssendingen', u'http://www.nrk.no/ostlandssendingen/siste.rss'),
