@@ -14,6 +14,9 @@ class Nrk(BasicNewsRecipe):
                         dict(name='div', attrs={'class':'article-info'}),
                         dict(name='div', attrs={'class':'article'}),
                         dict(name='article', attrs={'class':'article widget rich cf'}),
+                        dict(name='article', attrs={'class':'teaser widget rich js-realtime emphasis-low bulletin'}),
+                        dict(name='article', attrs={'class':'teaser widget rich js-realtime emphasis-medium bulletin'}),
+                        dict(name='article', attrs={'class':'teaser widget rich js-realtime emphasis-high bulletin'}),
                         dict(name='noscript') ]
 
      remove_tags    = [ dict(name='ul', attrs={'class':'article-tools'}),
@@ -23,6 +26,7 @@ class Nrk(BasicNewsRecipe):
                         dict(name='div', attrs={'class':'g50 col fl s6 sl9 sl12 sl18 quote-reference'}),
                         dict(name='div', attrs={'class':'g50 col fr s6 sl9 sl12 sl18 quote-reference'}),
                         dict(name='div', attrs={'class':'g33 col s6 sl9 sl12 sl18 stack fr cf'}),
+                        dict(name='div', attrs={'class':'bulletin-sharing'}),
                         dict(name='img', attrs={'class':'js-img'}),
                         dict(name='span', attrs={'class':'nextgroup'}) ]
 
