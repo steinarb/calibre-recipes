@@ -16,8 +16,7 @@ class Nrk(BasicNewsRecipe):
                         dict(name='article', attrs={'class':'article widget rich cf'}),
                         dict(name='article', attrs={'class':'teaser widget rich js-realtime emphasis-low bulletin'}),
                         dict(name='article', attrs={'class':'teaser widget rich js-realtime emphasis-medium bulletin'}),
-                        dict(name='article', attrs={'class':'teaser widget rich js-realtime emphasis-high bulletin'}),
-                        dict(name='noscript') ]
+                        dict(name='article', attrs={'class':'teaser widget rich js-realtime emphasis-high bulletin'}) ]
 
      remove_tags    = [ dict(name='ul', attrs={'class':'article-tools'}),
                         dict(name='div', attrs={'id':'share-article'}),
@@ -61,3 +60,11 @@ ul.byline li address span, ul.byline li address a { color: #777777; display: blo
      def get_cover_url(self):
          url = 'file:///tmp/nrk.jpg'
          return url
+
+     def preprocess_raw_html(self, raw_html, url):
+          # Strip the <noscript> tag before it's stripped together with its children (which is a usable <img> tag.
+          raw_html = self.noscriptStartAndEndTag.sub('', raw_html)
+          return raw_html
+
+     # Regular expressions used to find <noscript> tags.
+     noscriptStartAndEndTag = re.compile('</?noscript>')
