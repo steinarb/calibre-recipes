@@ -16,7 +16,7 @@ class AftenpostenSb(BasicNewsRecipe):
                         dict(name='p', attrs={'class':'leadText '}),
                         dict(name='div', attrs={'class':'group publishInfo'}),
                         dict(name='div', attrs={'class':'group publishInfo meninger'}),
-                        dict(name='div', attrs={'class':'slideShowItemContainer'}),
+                        dict(name='div', attrs={'class':'slideShowItemContainer withCaption'}),
                         dict(name='div', attrs={'class':'widget bodyText storyContent'}),
                         dict(name='div', attrs={'class':'widget storyContent bodyText'}) ]
 
@@ -55,3 +55,11 @@ class AftenpostenSb(BasicNewsRecipe):
      def get_cover_url(self):
          url = 'http://static.buyandread.com/thumbnail/aftenposten_morgen/aftenposten_morgen.jpg'
          return url
+
+     def preprocess_raw_html(self, raw_html, url):
+          # Replace <div> placeholders with <img> tags
+          raw_html = self.imgPlaceholder.sub(r'<img src=\1 />', raw_html)
+          return raw_html
+
+     # Regular expressions used to find paragraphs in VG article body text.
+     imgPlaceholder = re.compile('<div class="imagePlaceholder" data-image-url=(.*)></div>')
