@@ -8,6 +8,12 @@ class VgNo(BasicNewsRecipe):
     publication_type = 'newspaper'
     oldest_article = 1
     max_articles_per_feed = 100
+    keep_only_tags = [ dict(name='h1', attrs={'class':'main-title'}),
+                       dict(name='div', attrs={'class':'article-main-lead'}),
+                       dict(name='div', attrs={'id':'byline-source'}),
+                       dict(name='div', attrs={'id':'article-body-text'}) ]
+
+    remove_tags = [ dict(name='div', attrs={'id':'wid-article-body'}) ]
 
     feeds          = [(u'Forsiden', u'http://www.vg.no/rss/nyfront.php?frontId=1'),
                       (u'Nyheter innenriks', u'http://www.vg.no/rss/create.php?categories=10'),
@@ -21,19 +27,6 @@ class VgNo(BasicNewsRecipe):
                       (u'Dine Penger', u'http://www.vg.no/rss/create.php?categories=90'),
                       (u'Interaktiv spill', u'http://www.vg.no/rss/create.php?categories=41')]
 
-    def print_version(self, url):
-        spliturl = re.split('artid=',url)
-        spliturl[0] = 'http://www.vg.no/nyheter/utskriftsvennlig/?artId='
-        return ''.join(spliturl)
-
     def get_cover_url(self):
        url = 'http://static.buyandread.com/thumbnail/verdensgang/verdensgang-large.jpg'
        return url
-
-    def preprocess_raw_html(self, raw_html, url):
-        # Create corrected paragraph markup for article body text.
-        raw_html = self.paraDivision.sub('</p><p>', raw_html)
-        return raw_html
-
-    # Regular expressions used to find paragraphs in VG article body text.
-    paraDivision = re.compile('<br/><br/>')
