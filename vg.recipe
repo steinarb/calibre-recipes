@@ -24,7 +24,6 @@ class VgNo(BasicNewsRecipe):
                       (u'Rampelys film', u'http://www.vg.no/rss/create.php?categories=26'),
                       (u'Rampelys filmanm', u'http://www.vg.no/rss/create.php?categories=27'),
                       (u'Rampelys bøke', u'http://www.vg.no/rss/create.php?categories=28'),
-                      (u'Dine Penger', u'http://www.vg.no/rss/create.php?categories=90'),
                       (u'Interaktiv spill', u'http://www.vg.no/rss/create.php?categories=41')]
 
     def get_cover_url(self):
