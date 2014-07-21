@@ -47,6 +47,8 @@ class Nrk(BasicNewsRecipe):
                        (u'Ytring', u'http://nrk.no/ytring/toppsaker.rss'),
                        (u'Musikknyheter fra P3', u'http://p3.no/musikk/feed/')]
 
+     ignore_duplicate_articles = {'title', 'url'}
+
      extra_css = '\
 body.nas .intro-element-article p, body.nas .article p { line-height: 1.5; } \
 .img-center p, .img-left p, .img-right p, .img-center address, .img-left address, .img-right address, .article .img-center p, .article .img-left p, .article .img-right p, .article .img-center address, .article .img-left address, .article .img-right address, .video p { background-color: #E8E8E8; color: #000000; font-size: 10px; font-weight: 400; margin: 0px; padding: 4px; } \

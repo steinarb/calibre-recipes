@@ -34,6 +34,8 @@ class AftenpostenSb(BasicNewsRecipe):
                        (u'Sport', u'http://www.aftenposten.no/rss/?kat=nyheter_sport&img=w780c169'),
                        (u'Motorsport', u'http://www.aftenposten.no/rss/?kat=nyheter_sport_ol&img=w780c169') ]
 
+     ignore_duplicate_articles = {'title', 'url'}
+
      extra_css = '\
 .leadText { display: inline-block; font-size: 16px; font-weight: 700; line-height: 1.22; } \
 .publishInfo { border-bottom: 2px solid #7C7B7B; border-top: 2px solid #7C7B7B; margin-bottom: 15px; padding: 5px 4px; font-size: 14px; line-height: 1.4; } \
