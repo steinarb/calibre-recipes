@@ -26,7 +26,7 @@ class VgNo(BasicNewsRecipe):
                       (u'Rampelys bøke', u'http://www.vg.no/rss/create.php?categories=28'),
                       (u'Interaktiv spill', u'http://www.vg.no/rss/create.php?categories=41')]
 
-     ignore_duplicate_articles = {'title', 'url'}
+    ignore_duplicate_articles = {'title', 'url'}
 
     def get_cover_url(self):
        url = 'http://static.buyandread.com/thumbnail/verdensgang/verdensgang-large.jpg'
