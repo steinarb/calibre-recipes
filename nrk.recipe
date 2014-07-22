@@ -8,7 +8,7 @@ class Nrk(BasicNewsRecipe):
      publication_type = 'newspaper'
      language = 'no'
      oldest_article = 1
-     max_articles_per_feed = 100
+     max_articles_per_feed = 10
      no_stylesheets = True
      keep_only_tags = [ dict(name='div', attrs={'class':'intro-element-article'}),
                         dict(name='div', attrs={'class':'article-info'}),
