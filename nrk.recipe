@@ -70,7 +70,7 @@ ul.byline li address span, ul.byline li address a { color: #777777; display: blo
          return url
 
      def preprocess_raw_html(self, raw_html, url):
-          # Strip the <noscript> tag before it's stripped together with its children (which is a usable <img> tag.
+          # Strip the <noscript> tag before it's stripped together with its children (which is a usable <img> tag).
           raw_html = self.noscriptStartAndEndTag.sub('', raw_html)
           return raw_html
 
