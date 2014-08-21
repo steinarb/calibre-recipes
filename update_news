@@ -11,7 +11,7 @@ SCRIPTDIR=`(cd $(dirname $0); pwd)`
 $SCRIPTDIR/create_nrk_cover_image
 
 # Variables that may need adjustment
-RECIPE_LIST="vg.recipe aftenposten.recipe nrk.recipe"
+RECIPE_LIST="nrk.recipe vg.recipe aftenposten.recipe"
 expirationDate=`date --date "2 days ago" "+%s"`
 
 # Locations recipes, epub files and the calibre database
