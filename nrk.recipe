@@ -10,30 +10,9 @@ class Nrk(BasicNewsRecipe):
      oldest_article = 1
      max_articles_per_feed = 10
      no_stylesheets = True
-     keep_only_tags = [ dict(name='div', attrs={'class':'intro-element-article'}),
-                        dict(name='div', attrs={'class':'article-info'}),
-                        dict(name='div', attrs={'class':'article'}),
-                        dict(name='article', attrs={'class':'article widget rich cf'}),
-                        dict(name='article', attrs={'class':'teaser widget rich js-realtime emphasis-low bulletin'}),
-                        dict(name='article', attrs={'class':'teaser widget rich js-realtime emphasis-medium bulletin'}),
-                        dict(name='article', attrs={'class':'teaser widget rich js-realtime emphasis-high bulletin'}) ]
+     keep_only_tags = [ dict(name='article', attrs={'role':'main article'}) ]
 
-     remove_tags    = [ dict(name='ul', attrs={'class':'article-tools'}),
-                        dict(name='div', attrs={'id':'share-article'}),
-                        dict(name='div', attrs={'class':'share-button-bar'}),
-                        dict(name='div', attrs={'class':'sharing cf'}),
-                        dict(name='div', attrs={'class':'thumbnails'}),
-                        dict(name='div', attrs={'class':'g50 col fr s6 sl9 sl12 sl18 image-reference'}),
-                        dict(name='div', attrs={'class':'g50 col fl s6 sl9 sl12 sl18 quote-reference'}),
-                        dict(name='div', attrs={'class':'g50 col fr s6 sl9 sl12 sl18 quote-reference'}),
-                        dict(name='div', attrs={'class':'g33 col s6 sl9 sl12 sl18 stack fr cf'}),
-                        dict(name='div', attrs={'class':'bulletin-sharing'}),
-                        dict(name='div', attrs={'class':'universe widget rich flow meta-widget js-initialize'}),
-                        dict(name='a', attrs={'class':'universe-link skin-text-hover autonomous'}),
-                        dict(name='img', attrs={'class':'js-img'}),
-                        dict(name='article', attrs={'class':'article widget brief plug-default plug cf'}),
-                        dict(name='span', attrs={'class':'bulletin-pitch'}),
-                        dict(name='span', attrs={'class':'nextgroup'}) ]
+     remove_tags    = [ ]
 
      feeds          = [(u'Forsida', u'http://www.nrk.no/toppsaker.rss'),
                        (u'NRK Nyheter', u'http://www.nrk.no/nyheiter/siste.rss'),
