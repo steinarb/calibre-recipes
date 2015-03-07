@@ -10,7 +10,7 @@ class Nrk(BasicNewsRecipe):
      oldest_article = 1
      max_articles_per_feed = 10
      no_stylesheets = True
-     keep_only_tags = [ dict(name='article', attrs={'role':'main article'}) ]
+     keep_only_tags = [ dict(name='article', attrs={'role':'main'}) ]
 
      remove_tags    = [ ]
 
