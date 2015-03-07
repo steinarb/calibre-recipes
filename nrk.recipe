@@ -10,9 +10,11 @@ class Nrk(BasicNewsRecipe):
      oldest_article = 1
      max_articles_per_feed = 10
      no_stylesheets = True
-     keep_only_tags = [ dict(name='article', attrs={'role':'main'}) ]
+     keep_only_tags = [ dict(name='article', attrs={'role':'main'}),
+                        dict(name='time', attrs={'class':'relative'}),
+                        dict(name='div', attrs={'class':'bulletin-text text-body'}) ]
 
-     remove_tags    = [ ]
+     remove_tags    = [ dict(name='div', attrs={'class':'bulletin-share-button-bar'}) ]
 
      feeds          = [(u'Forsida', u'http://www.nrk.no/toppsaker.rss'),
                        (u'NRK Nyheter', u'http://www.nrk.no/nyheiter/siste.rss'),
