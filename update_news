@@ -33,7 +33,7 @@ for recipe in $RECIPE_LIST;do
     publicationName=`echo $recipe | sed 's/\.recipe$//g'`
     mkdir -p $IMPORTDIR
     ebook-convert $recipe $EPUBFILE --output-profile=sony --tags News,$publicationName --preserve-cover-aspect-ratio >>$LOG_FILE
-    ebook-convert $EPUBFILE $MOBIFILE --mobi-file-type new >>$LOG_FILE
+    ebook-convert $EPUBFILE $MOBIFILE --mobi-file-type new >>$LOG_FILE 2>&1
     calibredb add -d --with-library $LIBRARY_LOCATION --one-book-per-directory $IMPORTDIR >>$LOG_FILE
     rm -rf $IMPORTDIR
 done
